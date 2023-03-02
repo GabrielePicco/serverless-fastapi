@@ -9,7 +9,7 @@ TEST_DIR=tests
 GIT_BRANCH=$(shell git rev-parse --abbrev-ref HEAD | sed -r 's/[\/]+/-/g' | sed -r 's/feature-//g' | cut -c 1-20)
 GIT_TAG=$(shell git tag --points-at HEAD | cut -c 1-3)
 
-STAGE ?= "$(if $(GIT_TAG), $(GIT_TAG), $(GIT_BRANCH))"
+STAGE ?= $(if $(GIT_TAG), $(GIT_TAG), $(GIT_BRANCH))
 
 AWS_DEFAULT_REGION ?= us-west-1
 
