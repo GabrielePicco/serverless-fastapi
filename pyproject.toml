@@ -7,9 +7,9 @@ authors = ["Damian Ziobro <damian@xmementoit.com>"]
 [tool.poetry.dependencies]
 python = "^3.8"
 boto3 = "1.13.5"
-fastapi = "0.63.0"
+fastapi = "0.92.0"
 uvicorn = "0.13.4"
-mangum = "0.11.0"
+mangum = "0.17.0"
 requests = "^2.26.0"
 
 [tool.poetry.dev-dependencies]

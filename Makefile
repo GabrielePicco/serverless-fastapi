@@ -9,15 +9,15 @@ TEST_DIR=tests
 GIT_BRANCH=$(shell git rev-parse --abbrev-ref HEAD | sed -r 's/[\/]+/-/g' | sed -r 's/feature-//g' | cut -c 1-20)
 GIT_TAG=$(shell git tag --points-at HEAD | cut -c 1-3)
 
-STAGE ?= $(if $(GIT_TAG), $(GIT_TAG), $(GIT_BRANCH))
+STAGE ?= "$(if $(GIT_TAG), $(GIT_TAG), $(GIT_BRANCH))"
 
-AWS_DEFAULT_REGION ?= eu-west-1
+AWS_DEFAULT_REGION ?= us-west-1
 
 #==========================================================================
 # Test and verify quality of the app
 serverless:
 	#install serverless framework for Continous Deployment
-	npm install -g serverless@3.15.2 || true
+	npm install -g serverless || true
 	sls plugin install -n serverless-python-requirements
 	sls plugin install -n serverless-domain-manager
 	sls plugin install -n serverless-localstack
