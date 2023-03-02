@@ -11,6 +11,7 @@ fastapi = "0.92.0"
 uvicorn = "0.13.4"
 mangum = "0.17.0"
 requests = "^2.26.0"
+httpx = "^0.23.3"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
