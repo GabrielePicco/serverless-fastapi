@@ -3,7 +3,6 @@ service: serverless-fastapi
 plugins:
   - serverless-python-requirements
   - serverless-localstack
-  - serverless-domain-manager
 provider:
   name: aws
   runtime: python3.8
@@ -31,15 +30,6 @@ custom:
       description: Dependencies of serverless-fastapi
       compatibleRuntimes:
         - python3.8
-
-  customDomain:
-    domainName: serverless.garbles.fun
-    stage: ${self:provider.stage}
-    basePath: ${self:provider.stage}
-    certificateArn: arn:aws:acm:us-east-1:438878282131:certificate/1a82bd76-cd01-4dbd-86ae-c577382f4e49
-    autoDomain: true
-    createRoute53Record: true
-    autoDomainWaitFor: 120
 
   localstack:
       stages:

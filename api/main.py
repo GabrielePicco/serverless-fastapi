@@ -11,7 +11,7 @@ stage = os.environ.get("STAGE", "")
 root_path = f"/{stage}/" if stage else ""
 
 
-app = FastAPI(title="serverless-fastapi", version=__version__, root_path=root_path)
+app = FastAPI(title="serverless-fastapi", version=__version__)
 
 app.add_middleware(
     CORSMiddleware,
